@@ -8,12 +8,12 @@ namespace Calculator.Utils
 	public static class Utils
 	{
 		// This method gets the variable "number" and converts it into a string and converts the value of number into a double.
-		private static int executeExpression(string text)
+		private static double executeExpression(string text)
 		{
 			string number = new DataTable().Compute(text, "").ToString();
 			double numberDouble = Convert.ToDouble(number);
 
-			return Convert.ToInt16(numberDouble);
+			return numberDouble;
 		}
 
 		// Returns the value of the variable "number" to specified double-precision floating point equivalent to 16-bit.
@@ -92,7 +92,7 @@ namespace Calculator.Utils
 
 			try
 			{
-				primaryDisplay.Text = executeExpression(primaryDisplay.Text + secondaryDisplay.Text).ToString();  //
+				primaryDisplay.Text = executeExpression(secondaryDisplay.Text + primaryDisplay.Text).ToString();  //
 
 				if (primaryDisplay.Text.Length > 6)
 					primaryDisplay.FontSize = 48;
