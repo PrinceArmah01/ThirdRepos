@@ -7,7 +7,7 @@ namespace Calculator.Utils
 {
 	public static class Utils
 	{
-		// This method gets the variable "number" and converts it into a string and converts the value of number into a double
+		// This method gets the variable "number" and converts it into a string and converts the value of number into a double.
 		private static int executeExpression(string text)
 		{
 			string number = new DataTable().Compute(text, "").ToString();
@@ -16,13 +16,13 @@ namespace Calculator.Utils
 			return Convert.ToInt16(numberDouble);
 		}
 
-		// Returns the value of the variable "number" to specified double-precision floating point equivalent to 16-bit
+		// Returns the value of the variable "number" to specified double-precision floating point equivalent to 16-bit.
 		private static bool isNumeric(char character)
 		{
 			return int.TryParse(character.ToString(), out _);
 		}
 
-		// This displays the various TextBlocks
+		// This displays the various TextBlocks.
 		public static void handleClick(string number)
 		{
 			TextBlock primaryDisplay = MainPage.mainPage.primaryDisplay;
